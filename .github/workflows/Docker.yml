@@ -21,7 +21,12 @@ jobs:
         username: joaorueda
         password: ${{ secrets.PASSDOCKER }}
         ecr: auto
-        logout: true      
+        logout: true    
+        
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v2.1.1
+      with:
+        name: applicativo
         
     - name: Build and push Docker images
       # You may pin to the exact commit or the version.
